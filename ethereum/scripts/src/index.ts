@@ -1,4 +1,4 @@
-import { createPublicClient, http } from 'viem'
+import { createPublicClient, formatEther, http } from 'viem'
 import { sepolia } from 'viem/chains'
 
 /**
@@ -6,7 +6,7 @@ import { sepolia } from 'viem/chains'
  */
 async function main() {
   // 立ち上げた環境に合わせて設定する。
-  const rpcUrl = 'http://localhost:8545'
+  const rpcUrl = 'http://0.0.0.0:7545'
 
   // Sepoliaテストネットワークに接続するクライアントを作成
   const client = createPublicClient({
@@ -15,10 +15,16 @@ async function main() {
   })
 
   try {
+    // chainIDを取得する。
+    const chainID = client.chain.id.toString();
     // 現在のブロック番号を取得
     const blockNumber = await client.getBlockNumber()
+    // ガス代も取得
+    const gasPrice = await client.getGasPrice()
     
-    console.log('現在のブロック番号:', blockNumber)
+    console.log("チェーンID:", chainID);
+    console.log('現在のブロック番号:', blockNumber);
+    console.log('ガス代:', formatEther(gasPrice), 'ETH')
   } catch (error) {
     console.error('ブロック番号の取得中にエラーが発生しました:', error)
   }

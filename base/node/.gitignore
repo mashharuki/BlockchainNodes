@@ -1,0 +1,6 @@
+/.idea/
+/geth-data/
+/reth-data/
+/nethermind-data/
+.DS_Store
+.env

@@ -10,3 +10,6 @@
 - [GitHub - ChainSafe/lodestar/QuickStart](https://github.com/ChainSafe/lodestar-quickstart)
 - [lodestar 公式サイト](https://lodestar.chainsafe.io/) 
 - [Nethermind getstarted install docker image](https://docs.nethermind.io/get-started/installing-nethermind#docker-container)
+- [Ethereum Beacon Chain checkpoint sync endpoints](https://eth-clients.github.io/checkpoint-sync-endpoints/)
+- [Base公式ドキュメント - Running a Base Node](https://docs.base.org/chain/run-a-base-node)
+- [GitHub Base/Node](https://github.com/base/node)
