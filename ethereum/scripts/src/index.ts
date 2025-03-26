@@ -6,7 +6,7 @@ import { sepolia } from 'viem/chains'
  */
 async function main() {
   // 立ち上げた環境に合わせて設定する。
-  const rpcUrl = 'http://0.0.0.0:7545'
+  const rpcUrl = 'http://localhost:8545'
 
   // Sepoliaテストネットワークに接続するクライアントを作成
   const client = createPublicClient({
