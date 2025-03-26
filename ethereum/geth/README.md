@@ -43,12 +43,16 @@ docker run -d --name ethereum-node \
   ethereum/client-go \
   --syncmode snap \
   --cache=2048 \
+  --authrpc.addr 0.0.0.0 \
+  --authrpc.port 8551 \
+  --authrpc.vhosts "*" \
   --sepolia \
   --http \
   --http.addr 0.0.0.0 \
   --http.port 8545 \
-  --authrpc.jwtsecret ./jwt.hex \
+  --authrpc.jwtsecret /jwt.hex \
   --rpc.enabledeprecatedpersonal \
+  --datadir ./data/geth \
   --http.corsdomain "*"
 ```
 
@@ -213,10 +217,10 @@ Options:
 
 ```bash
 docker run -d \
-  -v /Users/harukikondo/git/BlockchainNodes/data/jwt.hex:/jwt.hex \
+  -v /Users/harukikondo/git/BlockchainNodes/data/jwt.hex:/usr/app/jwt.hex \
   chainsafe/lodestar beacon \
   --network sepolia \
-  --jwt-secret /jwt.hex \
+  --jwt-secret /usr/app/jwt.hex \
   --checkpointSyncUrl https://beaconstate-sepolia.chainsafe.io
 ```
 
