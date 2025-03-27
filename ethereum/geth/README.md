@@ -36,16 +36,16 @@ docker images | grep ethereum/client-go
 
 ```bash
 docker run -d --name ethereum-node \
-  -v /Users/harukikondo/git/BlockchainNodes/data:/root \
+  -v /Users/harukikondo/git/BlockchainNodes/data/jwt.hex:/jwt.hex \
   -p 8545:8545 \
   -p 8551:8551 \
   -p 30303:30303 \
   ethereum/client-go \
   --syncmode snap \
   --cache=2048 \
-  --authrpc.addr 0.0.0.0 \
+  --authrpc.addr localhost \
   --authrpc.port 8551 \
-  --authrpc.vhosts "*" \
+  --authrpc.vhosts localhost \
   --sepolia \
   --http \
   --http.addr 0.0.0.0 \
